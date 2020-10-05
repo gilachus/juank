@@ -1,0 +1,3 @@
+.env
+jvenv
+db.sqlite3

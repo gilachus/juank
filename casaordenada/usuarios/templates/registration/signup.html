@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Registro</h2>
+<form method="POST">
+	{% csrf_token %}
+	{% for field in form %}
+	<div class="form-group">
+		<span class="text-warning">{{ field.errors }}</span>
+		<label class="m-0">{{ field.label_tag }}</label>
+		<p>{{ field }}</p>
+	</div>
+	{% endfor %}
+	<button type="submit" class="btn btn-primary">Registrar</button>
+	<button type="reset" class="btn btn-primary">Reset</button>
+</form>
+<div class="mt-2">
+	<a href="{% url 'password_reset' %}">Recuperar contraseña</a>
+</div>
+{% endblock %}

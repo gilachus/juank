@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2>Deja tu mensaje</h2>
+	<form method="POST">
+		{% csrf_token %}
+		{% for hidden in form.hidden_fields %}
+		{{ hidden }}
+		{% endfor %}
+
+		{% for field in form.visible_fields %}
+		<div class="form-group">
+			{{ field.errors }}
+			<label>
+				{{ field.label_tag}}
+			</label>
+			<p>{{ field }}</p>
+		</div>
+		{% endfor %}
+		<button class="btn btn-secondary" type="reset">reset</button>
+		<button class="btn btn-primary" type="submit">Enviar</button>
+	</form>
+{% endblock content %}

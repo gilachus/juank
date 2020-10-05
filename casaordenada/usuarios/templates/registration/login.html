@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Iniciar Sesión</h2>
+<form action="." method="POST">
+	{% csrf_token %}
+	{% for field in form %}
+	<div class="form-group">
+		{{ field.errors }}
+		<label class="m-0">{{ field.label_tag }}</label>
+		<p>{{ field }}</p>
+	</div>
+	{% endfor %}
+	<button type="submit" class="btn btn-primary">Iniciar sesión</button>
+	<button type="reset" class="btn btn-secondary">reset</button>
+</form>
+<div class="mt-2">
+	<a href="{% url 'usuarios:signup' %}">Registro</a>
+	<span>&nbsp</span>
+	<a href="{% url 'password_reset' %}">Recuperar contraseña</a>
+</div>
+{% endblock %}
+

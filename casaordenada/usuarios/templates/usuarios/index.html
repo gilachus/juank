@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	{% if user.is_authenticated %}
+		<h2>welcome {{ user.username }}</h2> 
+	{% else %}
+	<div class="page-header">
+		<h1 class="">DEJAMOS TU CASA ORDENADA</h1> 
+		<p>Encuentra el servicio especializado de mantenimiento, reparaciones o aseo para tu hogar o empresa.</p>
+	</div>
+		
+	{% endif%}
+{% endblock %}
