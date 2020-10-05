@@ -120,22 +120,21 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
+# conf staticfiles
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # The Net Ninja
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+# util en desarrollo luego probamos whitenoise
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 LOGIN_REDIRECT_URL = 'usuarios:index'
 LOGOUT_REDIRECT_URL = 'usuarios:index'
 
-
+# conf para correo
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.googlemail.com'#'smtp.office365.com'
 EMAIL_USE_TLS = True

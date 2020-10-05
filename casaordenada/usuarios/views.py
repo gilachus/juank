@@ -87,7 +87,7 @@ def correotest(request):
 	asunto = 'test 2 de octubre'
 	contenido = 'masterproelite'
 	email_server = settings.EMAIL_HOST_USER
-	clientes = ['jesusgilberdugo@gmail.com']
+	clientes = [settings.EMAIL_HOST_USER]
 	enviar_correo(asunto, contenido, email_server, clientes)
 	return HttpResponse('<h1>Correo Enviado</h2>')
 
